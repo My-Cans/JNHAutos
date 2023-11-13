@@ -1,0 +1,144 @@
+﻿@import "../bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: 'Barlow';
+    src: url("/fonts/Barlow/Barlow-Regular.ttf") format('opentype');
+}
+
+%banner {
+    background-position: center;
+    background-size: cover !important;
+    background-blend-mode: multiply;
+    height: 60vh;
+    color: #fff;
+
+    h1 {
+        padding-top: 1em;
+        font-size: 4em;
+        font-weight: 600;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    %banner {
+        h1 {
+            padding-top: 1em;
+            font-size: 2em;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    %banner {
+        h1 {
+            padding-top: 1em;
+            font-size: 1.5em;
+        }
+
+        .btn-primary {
+            padding: 0.5em 1em;
+        }
+    }
+}
+
+html, body {
+    font-family: "Barlow" !important;
+
+    p {
+        line-height: 2em;
+    }
+
+    .btn-primary {
+        padding: 1em 2em;
+        border-radius: 0;
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+.navbar {
+    position: relative;
+    top: 0;
+    padding: 1em 2em;
+    position: fixed;
+    transition: background-color 0.2s linear;
+    width: 100%;
+
+    .nav-logo {
+        max-width: 120px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .nav-logo {
+            max-width: 80px;
+        }
+    }
+
+    &.solid-nav {
+        background-color: #000;
+        transition: background-color 0.2s linear;
+    }
+
+    .nav-item {
+        .nav-link {
+            color: #fff;
+            transition: opacity .125s linear;
+
+            &:hover {
+                opacity: 0.5;
+                cursor: pointer;
+                transition: opacity .125s linear;
+            }
+
+            &:visited {
+                text-decoration: none;
+            }
+
+            &.active {
+                color: $primary !important;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .navbar {
+        background-color: #000;
+    }
+}
+
+#home-banner {
+    background: url("/images/tools.webp") rgba(24, 31, 42, 0.9);
+    @extend %banner;
+}
+
+#services-banner {
+    background: url("/images/jumper-cables.webp") rgba(24, 31, 42, 0.9);
+    @extend %banner;
+}
+
+#key-cutting-banner {
+    background: url("/images/key-cutting.webp") rgba(24, 31, 42, 0.9);
+    @extend %banner;
+    background-position: center;
+}
+
+#contact-banner {
+    background: url("/images/zim-zimma.webp") rgba(24, 31, 42, 0.9);
+    @extend %banner;
+    background-position: center;
+}
+
+.container {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#footer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.validation-message {
+    color: red;
+}

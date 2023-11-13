@@ -1,0 +1,94 @@
+﻿@page "/contact"
+@using JNHAutos.Domain;
+
+<div class="container-fluid banner" id="contact-banner">
+    <div class="row h-100">
+        <div class="col-4 offset-2 align-self-center">
+            <h1>
+                Contact us
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-5 fw-bold">Get In Touch</h2>
+
+                <p>
+                    Ready to get your car fixed, book a service or have a question? Contact JNH Autos today and let us know how we can help…
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <EditForm Model=@ContactViewModel OnSubmit=@FormSubmit>
+                <FluentValidationValidator @ref="_fluentValidationValidator" DisableAssemblyScanning="@true" />
+
+                <div class="d-flex flex-column mb-3">
+                    <label class="form-label">Name</label>
+                    <InputText @bind-Value="ContactViewModel.Name" class="form-control" />
+                    <ValidationMessage For="() => ContactViewModel.Name" />
+                </div>
+
+                <div class="d-flex flex-column mb-3">
+                    <label class="form-label">Email</label>
+                    <InputText @bind-Value="ContactViewModel.Email" class="form-control" />
+                    <ValidationMessage For="() => ContactViewModel.Email" />
+                </div>
+
+                <div class="d-flex flex-column mb-3">
+                    <label class="form-label">Phone number</label>
+                    <InputText @bind-Value="ContactViewModel.PhoneNumber" class="form-control" />
+                    <ValidationMessage For="() => ContactViewModel.PhoneNumber" />
+                </div>
+
+                <div class="d-flex flex-column mb-3">
+                    <label class="form-label">Message</label>
+                    <InputTextArea @bind-Value="ContactViewModel.Message" class="form-control" />
+                    <ValidationMessage For="() => ContactViewModel.Message" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Get in touch
+                </button>
+            </EditForm>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-5 fw-bold">Contact info</h2>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <h4 class="mb-3 fw-bold">Call us</h4>
+
+                    <a class="d-block mb-3" href="tel:07923599966" title="07923 599 966">07923 599 966</a>
+
+                    <h4 class="mb-3 fw-bold">Our email</h4>
+
+                    <a class="d-block mb-3" href="mailto:jnhautos@gmail.com">jnhautos@gmail.com</a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <h4 class="mb-3 fw-bold">Our location</h4>
+
+                    <p class="mb-3">Rastrick, Brighouse</p>
+
+                    <h4 class="mb-3 fw-bold">Working hours</h4>
+
+                    <p class="mb-1">Mon-Fri: 9AM-5PM</p>
+                    <p>Sat-Sun: 10AM-1PM</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
